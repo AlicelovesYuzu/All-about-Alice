@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figure Skating Events</title>
+    <link rel="icon" href="media/beautiful_skates.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8e1e4;
+            border: 10px solid #4a90e2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 0;
+        }
+        
+        .top-nav > a {
+            display: block;
+            width: 257px;
+            background-color: #f9d3d7;
+            color: rgb(122, 65, 38);
+            text-align: center;
+            padding: 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        
+        /* Dropdown container */
+        .top-nav > div {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 257px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 0 0 5px 5px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        /* Show dropdown on hover */
+        .top-nav > a:hover + div,
+        .top-nav > div:hover {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Dropdown links */
+        .top-nav div a {
+            color: rgb(122, 65, 38);
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            background-color: #f9d3d7;
+            margin: 2px 0;
+            transition: background-color 0.3s;
+        }
+        
+        .top-nav div a:hover {
+            background-color: #f8e1e4;
+        }
+        
+        /* Main content */
+        .hero {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .hero h1 {
+            color: #4a90e2;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p.subtitle {
+            color: #333;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-style: italic;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .content h2 {
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #5b2126;
+            padding-bottom: 10px;
+        }
+        
+        .content p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .content a {
+            color: #4a90e2;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .content a:hover {
+            text-decoration: underline;
+        }
+        
+        .event-list {
+            margin: 30px 0;
+        }
+        
+        .event-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #95303a;
+        }
+        
+        .event-item h3 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+        
+        .event-item p {
+            margin-left: 20px;
+        }
+        
+        .highlight-box {
+            background-color:  #f2e0ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 5px solid #594ae2;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .social-icons {
+            margin: 15px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .top-nav > a {
+                width: 80%;
+                margin: 5px 0;
+            }
+            
+            .top-nav > div {
+                position: static;
+                display: none;
+                width: 80%;
+                box-shadow: none;
+                opacity: 1;
+                transform: none;
+            }
+            
+            .top-nav > a:hover + div,
+            .top-nav > div:hover {
+                display: block;
+                position: static;
+                border-radius: 0 0 5px 5px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="figure_intro.html">Figure Skating</a>
+                <div class="has-dropdown">
+                    <a href="figure_intro.html">Introduction</a>
+                    <a href="figure_rules.html">Rules</a>
+                    <a href="figure_events.html">Events</a> 
+                </div>
+            <a href="sychro_intro.html">Sychronized Skating</a>
+                <div class="has-dropdown">
+                    <a href="sychro_intro.html">Introduction</a>
+                    <a href="sychro_rules.html">Rules</a>
+                    <a href="sychro_events.html">Events</a>
+                </div>
+            <a href="history.html">History of Skating</a>
+            <a href="beginer.html">Beginner's Guide</a>
+            <a href="#">Organizations of Figure Skating</a>
+                <div class="has-dropdown">
+                    <a href="https://www.isu.org" target="_blank">International Skating Union</a>
+                    <a href="http://www.cfsa.com.cn/cfsa_portal/html/header.html" target="_blank">Chinese Figure Skating Association</a>
+                </div>
+        </nav>
+        
+        <!-- Main content -->
+        <div class="hero">
+            <h1>Figure Skating Events</h1>
+            <p class="subtitle">The Premier Competitions in the World of Figure Skating</p>
+            
+            <div class="content">
+                <h2>Major Figure Skating Competitions</h2>
+                
+                <p>
+                    Figure skating features a diverse calendar of prestigious competitions at both national and international levels. 
+                    These events showcase the pinnacle of athletic achievement and artistic expression in the sport, from the Olympic 
+                    stage to annual championship events.
+                </p>
+                
+                <div class="highlight-box">
+                    <p>
+                        <strong>Did you know?</strong> The International Skating Union (ISU) governs all international figure skating 
+                        competitions, establishing rules, judging standards, and competition formats that ensure fairness and 
+                        consistency across events worldwide.
+                    </p>
+                </div>
+                
+                <div class="event-list">
+                    <div class="event-item">
+                        <h3>Winter Olympics</h3>
+                        <p>
+                            The ultimate honor in figure skating, held every four years as part of the Winter Olympic Games. 
+                            Skaters compete for their countries in four disciplines: men's singles, women's singles, pairs, 
+                            and ice dance. The Olympic figure skating competition has produced some of the sport's most 
+                            memorable moments and legendary athletes.
+                        </p>
+                    </div>
+                    
+                    <div class="event-item">
+                        <h3>World Championships</h3>
+                        <p>
+                            The most prestigious annual competition in figure skating, typically held in March. The World 
+                            Championships determine the best skaters in each discipline for the season. Qualification is 
+                            based on national quotas earned through previous year's results, making entry highly competitive.
+                        </p>
+                    </div>
+                    
+                    <div class="event-item">
+                        <h3>World Junior Championships</h3>
+                        <p>
+                            The premier event for skaters aged 13-19 (men) and 13-19 (women), showcasing the next generation 
+                            of skating stars. Many Olympic champions first gained international recognition at this event. 
+                            Features the same disciplines as senior competitions with slightly modified technical requirements.
+                        </p>
+                    </div>
+                    
+                    <div class="event-item">
+                        <h3>European Championships</h3>
+                        <p>
+                            The oldest ISU championship (first held in 1891), open to skaters from European member nations. 
+                            Traditionally dominated by Russian, French, and Italian skaters, this January event serves as 
+                            an important benchmark before the World Championships.
+                        </p>
+                    </div>
+                    
+                    <div class="event-item">
+                        <h3>Four Continents Championships</h3>
+                        <p>
+                            Established in 1999 as an equivalent to Europeans for non-European countries (North America, 
+                            Asia, Africa, and Oceania). Provides valuable international experience for skaters from 
+                            developing skating nations and serves as a key competition in the Olympic qualification process.
+                        </p>
+                    </div>
+                    
+                    <div class="event-item">
+                        <h3>Grand Prix Series (Senior and Junior)</h3>
+                        <p>
+                            A six-event series held each fall featuring the world's top skaters. Senior events include: 
+                            Skate America, Skate Canada, Cup of China, NHK Trophy (Japan), Internationaux de France, 
+                            and Rostelecom Cup (Russia). Skaters earn points to qualify for the Grand Prix Final in December. 
+                            The Junior series follows a similar format for developing skaters.
+                        </p>
+                    </div>
+                    
+                    <div class="event-item">
+                        <h3>ISU Challenger Series</h3>
+                        <p>
+                            Introduced in 2014, this series of international competitions provides additional opportunities 
+                            for skaters to earn world standing points and prize money. Events include the Nebelhorn Trophy, 
+                            Finlandia Trophy, and Golden Spin of Zagreb, among others. Often used by skaters to test new 
+                            programs early in the competitive season.
+                        </p>
+                    </div>
+                </div>
+                
+                <p>
+                    For the most current information about figure skating competitions, schedules, and results, visit the 
+                    <a href="https://www.isu.org/figure-skating" target="_blank">ISU official website</a>.
+                </p>
+                
+                <div class="highlight-box">
+                    <p>
+                        <strong>Competition Format:</strong> Most senior international competitions feature two segments - 
+                        the Short Program (2 minutes 40 seconds) with required elements, and the Free Skate (4 minutes for 
+                        women, 4½ minutes for men) that allows more creative freedom. The combined score determines final 
+                        placements.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/imnotalice_2008/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>© 2025 by Alice Wang. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

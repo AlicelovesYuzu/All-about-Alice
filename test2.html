@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skater Scoreboard</title>
+    <style>
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #e9e9e9;
+        }
+        .total {
+            font-weight: bold;
+            color: rgb(1, 35, 100);
+        }
+        .element {
+            text-align: left;
+        }
+        input[type="text"], input[type="number"] {
+            width: 80%;
+            padding: 5px;
+            text-align: center;
+        }
+        .non-editable {
+            background-color: #ffffff;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Skater</th>
+            <th>Deduction</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="number" min="-3" max="0" value="0" id="deduct"></td>
+            <td class="total" id="totalId">0</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>Element</th>
+            <th>Base Value</th>
+            <th>GOE Mark</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td class="element"><input type="text" placeholder="name"></td>
+            <td><input type="number" id="base1" step="0.1" value="0.0" onchange="subValue('base1', 'goe1', 'score1');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe1" onchange="subValue('base1', 'goe1', 'score1'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score1">0</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base2" step="0.1" value="0.0" onchange="subValue('base2', 'goe2', 'score2');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe2" onchange="subValue('base2', 'goe2', 'score2'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score2">0</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base3" step="0.1" value="0.0" onchange="subValue('base3', 'goe3', 'score3');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe3" onchange="subValue('base3', 'goe3', 'score3'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score3">0</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base4" step="0.1" value="0.0" onchange="subValue('base4', 'goe4', 'score4');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe4" onchange="subValue('base4', 'goe4', 'score4'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score4">0</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base5" step="0.1" value="0.0" onchange="subValue('base5', 'goe5', 'score5');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe5" onchange="subValue('base5', 'goe5', 'score5'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score5">0</td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base6" step="0.1" value="0.0" onchange="subValue('base6', 'goe6', 'score6');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe6" onchange="subValue('base6', 'goe6', 'score6'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score6">0</td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base7" step="0.1" value="0.0" onchange="subValue('base7', 'goe7', 'score7');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe7" onchange="subValue('base7', 'goe7', 'score7'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score7">0</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base8" step="0.1" value="0.0" onchange="subValue('base8', 'goe8', 'score8');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe8" onchange="subValue('base8', 'goe8', 'score8'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score8">0</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base9" step="0.1" value="0.0" onchange="subValue('base9', 'goe9', 'score9');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe9" onchange="subValue('base9', 'goe9', 'score9'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score9">0</td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base10" step="0.1" value="0.0" onchange="subValue('base10', 'goe10', 'score10');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe10" onchange="subValue('base10', 'goe10', 'score10'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score10">0</td>
+        </tr>
+        <tr>
+            <td>11.</td>
+            <td class="element"><input type="text"></td>
+            <td><input type="number" id="base11" step="0.1" value="0.0" onchange="subValue('base11', 'goe11', 'score11');"></td>
+            <td><input type="number" min="-5" max="5" value="0" step="1" id="goe11" onchange="subValue('base11', 'goe11', 'score11'); techTotal2();"></td>
+            <td class="non-editable subscore" id="score11">0</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total Technical Element Score</td>
+            <td colspan="2" id="techTotal">0</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Component</th>
+            <th>Factor</th>
+            <th>PCS Mark</th>
+        </tr>
+        <tr>
+            <td>Composition</td>
+            <td>3.33</td>
+            <td><input type="number" id="composition" step="0.1" value="0.00" onchange="preTotal(); total();"></td>
+        </tr>
+        <tr>
+            <td>Presentation</td>
+            <td>3.33</td>
+            <td><input type="number" id="present" step="0.1" value="0.00" onchange="preTotal(); total();"></td>
+        </tr>
+        <tr>
+            <td>Skating Skills</td>
+            <td>3.33</td>
+            <td><input type="number" id="skills" step="0.1" value="0.00" onchange="preTotal(); total();"></td>
+        </tr>
+        <tr>
+            <td colspan="2">Total Program Component Score</td>
+            <td class="total" id="pTotal" >0</td>
+        </tr>
+    </table>
+    <script src="js/test2.js"></script>
+</body>
+</html>

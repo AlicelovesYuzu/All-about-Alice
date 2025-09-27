@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronized Skating Events</title>
+    <link rel="icon" href="media/beautiful_skates.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Main content */
+        .hero {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .hero h1 {
+            color: #4a90e2;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .content h2 {
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f9d3d7;
+            padding-bottom: 10px;
+        }
+        
+        .content h3 {
+            color: #4a90e2;
+            margin: 30px 0 15px;
+            padding-left: 15px;
+        }
+        
+        .content p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .content a {
+            color: #4a90e2;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .content a:hover {
+            text-decoration: underline;
+        }
+        
+        .event-section {
+            margin: 30px 0;
+        }
+        
+        .event-list {
+            margin-left: 20px;
+        }
+        
+        .event-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .event-list li:before {
+            content: "⛸";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+        }
+        
+        .pdf-link {
+            display: block;
+            background-color: #e8e5ff;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .event-explanation {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 5px solid #4a90e2;
+        }
+        
+        .event-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .event-table th, .event-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .event-table th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        
+        .event-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .social-icons {
+            margin: 15px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .top-nav > a {
+                width: 80%;
+                margin: 5px 0;
+            }
+            
+            .top-nav > div {
+                position: static;
+                display: none;
+                width: 80%;
+                box-shadow: none;
+                opacity: 1;
+                transform: none;
+            }
+            
+            .top-nav > a:hover + div,
+            .top-nav > div:hover {
+                display: block;
+                position: static;
+                border-radius: 0 0 5px 5px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="figure_intro.html">Figure Skating</a>
+            <div class="has-dropdown">
+                <a href="figure_intro.html">Introduction</a>
+                <a href="figure_rules.html">Rules</a>
+                <a href="figure_events.html">Events</a> 
+            </div>
+            <a href="sychro_intro.html">Synchronized Skating</a>
+            <div class="has-dropdown">
+                <a href="sychro_intro.html">Introduction</a>
+                <a href="sychro_rules.html">Rules</a>
+                <a href="#">Events</a>
+            </div>
+            <a href="history.html">History of Skating</a>
+            <a href="beginer.html">Beginner's Guide</a>
+            <a>Organizations of Figure Skating</a>
+            <div class="has-dropdown">
+                <a href="https://www.isu.org" target="_blank">International Skating Union</a>
+                <a href="http://www.cfsa.com.cn/cfsa_portal/html/header.html" target="_blank">Chinese Figure Skating Association</a>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <div class="hero">
+            <h1>Synchronized Skating Events</h1>
+            <div class="content">
+                <div class="event-explanation">
+                    <p>
+                        Synchronized skating competitions showcase the precision, teamwork, and athleticism of teams consisting of 8-20 skaters performing intricate formations and maneuvers in unison. 
+                        Governed by the International Skating Union (ISU), these events have grown significantly in popularity worldwide.
+                    </p>
+                </div>
+                
+                <h2>Major International Events</h2>
+                <div class="event-section">
+                    <h3>ISU World Synchronized Skating Championships</h3>
+                    <ul class="event-list">
+                        <li><strong>Established:</strong> 2000</li>
+                        <li><strong>Frequency:</strong> Annual</li>
+                        <li><strong>Teams:</strong> 24 senior teams from ISU member nations</li>
+                        <li><strong>Programs:</strong> Short Program (2:50 min) and Free Skate (4:30 min)</li>
+                        <li><strong>Recent Champions:</strong> Les Suprêmes (CAN), Helsinki Rockettes (FIN), Team Surprise (SWE)</li>
+                    </ul>
+                    
+                    <h3>ISU World Junior Synchronized Skating Championships</h3>
+                    <ul class="event-list">
+                        <li><strong>Established:</strong> 2013</li>
+                        <li><strong>Frequency:</strong> Annual</li>
+                        <li><strong>Teams:</strong> Junior teams (ages 13-19) from ISU member nations</li>
+                        <li><strong>Programs:</strong> Short Program (2:50 min) and Free Skate (4:00 min)</li>
+                        <li><strong>Recent Champions:</strong> Team Fintastic (FIN), Les Suprêmes (CAN), Skyliners (USA)</li>
+                    </ul>
+                    
+                    <a href="https://www.isu.org/synchronized-skating" target="_blank" class="pdf-link">Visit ISU Synchronized Skating Section</a>
+                </div>
+                
+                <div class="event-section">
+                    <h2>Other Significant Events</h2>
+                    
+                    <h3>ISU Challenger Series in Synchronized Skating</h3>
+                    <ul class="event-list">
+                        <li>Series of international competitions serving as qualifiers for World Championships</li>
+                        <li>Includes events like French Cup, Mozart Cup, and Spring Cup</li>
+                        <li>Provides competitive experience for developing teams</li>
+                    </ul>
+                    
+                    <h3>ISU Synchronized Skating Development Events</h3>
+                    <ul class="event-list">
+                        <li>Designed to promote the sport in developing nations</li>
+                        <li>Includes basic novice and intermediate categories</li>
+                        <li>Focus on skill development and international exchange</li>
+                    </ul>
+                </div>
+                
+                <div class="event-section">
+                    <h2>Competition Structure</h2>
+                    
+                    <table class="event-table">
+                        <tr>
+                            <th>Category</th>
+                            <th>Team Size</th>
+                            <th>Program Duration</th>
+                            <th>Technical Requirements</th>
+                        </tr>
+                        <tr>
+                            <td>Senior</td>
+                            <td>16 skaters (max 20)</td>
+                            <td>Short: 2:50 ±10 sec<br>Free: 4:30 ±10 sec</td>
+                            <td>Most difficult elements, complex formations</td>
+                        </tr>
+                        <tr>
+                            <td>Junior</td>
+                            <td>16 skaters (max 20)</td>
+                            <td>Short: 2:50 ±10 sec<br>Free: 4:00 ±10 sec</td>
+                            <td>Intermediate difficulty, developing skills</td>
+                        </tr>
+                        <tr>
+                            <td>Novice</td>
+                            <td>12-16 skaters</td>
+                            <td>Short: 2:30 ±10 sec<br>Free: 3:30 ±10 sec</td>
+                            <td>Basic elements, emphasis on unison</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="event-explanation">
+                    <h3>Event Calendar 2024-2025</h3>
+                    <p>
+                        The ISU synchronized skating season typically runs from November through April, with major events including:
+                    </p>
+                    <ul class="event-list">
+                        <li><strong>November:</strong> ISU Challenger Series begins</li>
+                        <li><strong>January-February:</strong> National Championships worldwide</li>
+                        <li><strong>March:</strong> World Junior Synchronized Skating Championships</li>
+                        <li><strong>April:</strong> World Synchronized Skating Championships</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <p>
+                        <strong>New for 2024-2025:</strong> The ISU has introduced a new Mixed Age category to encourage participation across generations, 
+                        and has updated the music requirements for short programs to include more contemporary selections.
+                    </p>
+                </div>
+                <p class="isu-credit">&copy; International Skating Union (ISU) - Synchronized Skating Events</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/imnotalice_2008/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>Contact: <a href="mailto:wang20080111@sina.cn" style="color:white;">wang20080111@sina.cn</a></p>
+            <p>© 2025 by Alice Wang. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
