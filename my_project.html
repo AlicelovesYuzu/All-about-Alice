@@ -3,44 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My project</title>
+    <title>My Achievements</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Content sections */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .content-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 45%;
+            min-width: 300px;
+        }
+
+        .content-section h2 {
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #380808;
+            padding-bottom: 10px;
+        }
+
+        .journey-list, .skills-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .journey-list li, .skills-list li {
+            margin-bottom: 15px;
+        }
+
+        .explore-btn {
+            display: block;
+            text-decoration: none;
+            background-color: #f190b9;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .explore-btn:hover {
+            background-color: #3a9de8;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-nav {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                width: 100%;
+                padding: 20px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="top-nav">
-        <a href="index.html">HOME</a>
-        <a href="#">ACHIEVEMENTS</a>
-        <a href="my_galery.html">MY GALLERY</a>
-        <a href="beginer.html">SKATING VISIONS</a>
-    </div>
-    
-    <div class="main-content">
-        <!-- 左侧：花样滑冰旅程 -->
-        <div class="journey-section">
-            <h2>My Figure Skating Journey</h2>
-            <ul class="journey-list">
-                <li><a href="#" class="explore-btn">Training</a></li>
-                <li><a href="#" class="explore-btn">Regional Competition</a></li>
-                <li><a href="#" class="explore-btn">National Championship</a></li>
-                <li><a href="#" class="explore-btn">International Tournaments</a></li>
-            </ul>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="my_galery.html">My Gallery</a>
+            <a href="#">Achievements</a>
+            <a href="beginer.html">Skating Visions</a>
+            <a>Contact Me</a>
         </div>
         
-        <!-- 右侧：技能与成就 -->
-        <div class="skills-section">
-            <h2>Skills & Achievements</h2>
-            <ul class="skills-list">
-                <li><a href="#" class="explore-btn">My projects</a></li>
-                <li><a href="#" class="explore-btn">Choreography</a></li>
-                <li><a href="#" class="explore-btn">Awards & Recognitions</a></li>
-                <li><a href="#" class="explore-btn">Performance on Ice</a></li>
-            </ul>
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-section">
+                <h2 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">My Figure Skating Journey</h2>
+                <ul class="journey-list">
+                    <li><a href="experience1.html" class="explore-btn">Click to view my 10 years of experience in Figure skating</a></li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">My Dancing Journey</h2>
+                <ul class="journey-list">
+                    <li><a href="experience2.html" class="explore-btn">Click to view my 10 years of experience in Dancing</a></li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Achievements</h2>
+                <ul class="skills-list">
+                    <li><a href="thesis_proposal.html" class="explore-btn">Research Details</a></li>
+                    <li><a class="explore-btn" target="_blank">Publications</a></li>
+                    <ul>
+                        <li>
+                            Wang, H. (2025) Holistic Figure Skating Classification Using Pose-Estimated Videos and Convolutional Neural Networks, 
+                        Proceedings of the 2024 3rd International Conference on Educational Science and Social Culture (ESSC 2024) <a href="https://www.atlantis-press.com/proceedings/essc-24/126009796" target="_blank">Full Text</a>
+                        </li>
+                        <li>
+                            Wang, H., Su, Y., Guo, Y. (2025) The environmental challenge of HPC: finding green power and cooling solutions for supercomputers, Advances in Engineering Innovation <a href="https://www.ewadirect.com/journal/aei/article/view/24598" target="_blank">Full Text</a>
+                        </li>
+                    </ul>
+                    <li><a href="#" class="explore-btn">Volunteers</a></li>
+                </ul>
+            </div>
         </div>
+        
     </div>
     
     <footer>
         <div class="social-icons">
-            <a href="https://www.instagram.com/imnotalice_2008/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/imnotalice_2008/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>

@@ -5,89 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figure Skating Rules</title>
     <link rel="icon" href="media/beautiful_skates.jpeg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8e1e4;
-            border: 10px solid #4a90e2;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Navigation */
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 0;
-            flex-wrap: wrap;
-        }
-        
-        .top-nav > a {
-            display: block;
-            width: 257px;
-            background-color: #f9d3d7;
-            color: rgb(122, 65, 38);
-            text-align: center;
-            padding: 10px;
-            margin: 0 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-        
-        /* Dropdown container */
-        .top-nav > div {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 257px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-radius: 0 0 5px 5px;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
-        
-        /* Show dropdown on hover */
-        .top-nav > a:hover + div,
-        .top-nav > div:hover {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Dropdown links */
-        .top-nav div a {
-            color: rgb(122, 65, 38);
-            padding: 12px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            background-color: #f9d3d7;
-            margin: 2px 0;
-            transition: background-color 0.3s;
-        }
-        
-        .top-nav div a:hover {
-            background-color: #f8e1e4;
-        }
-        
         /* Main content */
         .hero {
             text-align: center;
@@ -120,7 +39,6 @@
         .content h3 {
             color: #4a90e2;
             margin: 30px 0 15px;
-            border-left: 4px solid #4a90e2;
             padding-left: 15px;
         }
         
@@ -128,7 +46,7 @@
             color: #333;
             line-height: 1.8;
             margin-bottom: 20px;
-            text-align: justify;
+            text-align: left;
         }
         
         .content a {
@@ -164,7 +82,7 @@
         
         .pdf-link {
             display: block;
-            background-color: #f9d3d7;
+            background-color: #e8e5ff;
             padding: 12px;
             border-radius: 5px;
             margin: 20px 0;
@@ -178,10 +96,6 @@
             border-radius: 8px;
             margin: 25px 0;
             border-left: 5px solid #4a90e2;
-        }
-        
-        .scoring-system {
-            margin: 30px 0;
         }
         
         .scoring-table {
@@ -203,6 +117,14 @@
         
         .scoring-table tr:nth-child(even) {
             background-color: #f9f9f9;
+        }
+        
+        .highlight-box {
+            background-color: #f2e0ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 5px solid #594ae2;
         }
         
         /* Footer */
@@ -264,24 +186,11 @@
         <nav class="top-nav">
             <a href="index.html">Home</a>
             <a href="figure_intro.html">Figure Skating</a>
-            <div class="has-dropdown">
-                <a href="figure_intro.html">Introduction</a>
-                <a href="figure_rules.html">Rules</a>
-                <a href="figure_events.html">Events</a> 
-            </div>
-            <a href="sychro_intro.html">Sychronized Skating</a>
-            <div class="has-dropdown">
-                <a href="sychro_intro.html">Introduction</a>
-                <a href="sychro_rules.html">Rules</a>
-                <a href="sychro_events.html">Events</a>
-            </div>
+            <a href="sychro_events.html">Sychronized Skating</a>
             <a href="history.html">History of Skating</a>
             <a href="beginer.html">Beginner's Guide</a>
-            <a>Organizations of Figure Skating</a>
-            <div class="has-dropdown">
-                <a href="https://www.isu.org" target="_blank">International Skating Union</a>
-                <a href="http://www.cfsa.com.cn/cfsa_portal/html/header.html" target="_blank">Chinese Figure Skating Association</a>
-            </div>
+            <a href="https://www.isu.org" target="_blank">International Skating Union</a>
+            <a href="http://www.cfsa.com.cn/cfsa_portal/html/header.html"target="_blank">Chinese Figure Skating Association</a>
         </nav>
 
         <!-- Main content -->
@@ -295,6 +204,14 @@
                     </p>
                 </div>
                 
+                <div class="highlight-box">
+                    <p>
+                        <strong>Key Rule Changes for 2024-2025 Season:</strong> The ISU has implemented adjustments to jump base values, 
+                        introduced new spin positions, and modified the choreographic sequence requirements in single skating. 
+                        Pair skating now has stricter lift duration limits, while ice dance has updated pattern dance requirements.
+                    </p>
+                </div>
+                
                 <h2>Program Elements by Discipline</h2>
                 
                 <div class="element-section">
@@ -305,7 +222,7 @@
                         <li><strong>Step Sequence:</strong> A series of steps and turns in a pattern across the ice demonstrating technical skill and musical interpretation</li>
                         <li><strong>Choreo Sequence:</strong> A sequence of movements and poses expressing the character of the music without specific technical requirements</li>
                     </ul>
-                    <a href="single_name.pdf" target="_blank" class="pdf-link">Download Full Technical Elements Chart for Single Skating</a>
+                    <a href="学习材料_单人技术动作中英文对照表.pdf" target="_blank" class="pdf-link">Download Full Technical Elements Chart for Single Skating</a>
                 </div>
                 
                 <div class="element-section">
@@ -319,7 +236,7 @@
                         <li><strong>Pair Spin:</strong> Both skaters rotate together in various positions while maintaining close proximity</li>
                         <li><strong>Step Sequence:</strong> Performed in unison or mirroring each other with intricate footwork</li>
                     </ul>
-                    <a href="pairs_name.pdf" target="_blank" class="pdf-link">Download Full Technical Elements Chart for Pair Skating</a>
+                    <a href="学习材料_双人技术动作中英文对照表.pdf" target="_blank" class="pdf-link">Download Full Technical Elements Chart for Pair Skating</a>
                 </div>
                 
                 <div class="element-section">
@@ -332,10 +249,10 @@
                         <li><strong>Twizzle:</strong> Traveling turns on one foot with continuous rotation, performed in unison</li>
                         <li><strong>Choreographic Elements:</strong> Creative movements highlighting the team's interpretation of the music</li>
                     </ul>
-                    <a href="ice_dance_name.pdf" target="_blank" class="pdf-link">Download Full Technical Elements Chart for Ice Dance</a>
+                    <a href="学习材料_冰舞技术动作中英文对照表.pdf" target="_blank" class="pdf-link">Download Full Technical Elements Chart for Ice Dance</a>
                 </div>
                 
-                <div class="scoring-system">
+                <div class="element-section">
                     <h2>ISU Judging System</h2>
                     <p>
                         The International Judging System (IJS) is used to score all ISU competitions. It consists of two main components:
@@ -382,23 +299,14 @@
                 </div>
                 
                 <div class="rules-explanation">
-                    <h3>Technical Panel Handbook</h3>
                     <p>
                         For detailed information about element identification, levels, and violations, consult the official ISU technical handbooks:
                     </p>
-                    <ul class="element-list">
-                        <li><a href="single_rules.pdf" target="_blank">Single Skating Technical Handbook</a></li>
-                        <li><a href="pair_skating_rules.pdf" target="_blank">Pair Skating Technical Handbook</a></li>
-                        <li><a href="ice_dance_rules.pdf" target="_blank">Ice Dance Technical Handbook</a></li>
-                    </ul>
-                </div>
-                
-                <div class="highlight-box">
-                    <p>
-                        <strong>Key Rule Changes for 2024-2025 Season:</strong> The ISU has implemented adjustments to jump base values, 
-                        introduced new spin positions, and modified the choreographic sequence requirements in single skating. 
-                        Pair skating now has stricter lift duration limits, while ice dance has updated pattern dance requirements.
-                    </p>
+                    <a href="single_rules.pdf" target="_blank">Single Skating Technical Handbook</a>
+                    <br>
+                    <a href="pair_skating_rules.pdf" target="_blank">Pair Skating Technical Handbook</a>
+                    <br>
+                    <a href="ice_dance_rules.pdf" target="_blank">Ice Dance Technical Handbook</a>
                 </div>
                 
                 <p class="isu-credit">&copy; International Skating Union (ISU) - Official Rules and Regulations</p>
@@ -411,6 +319,7 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
+            <p>Contact: <a href="mailto:wang20080111@sina.cn" style="color:white;">wang20080111@sina.cn</a></p>
             <p>© 2025 by Alice Wang. All rights reserved.</p>
         </footer>
     </div>

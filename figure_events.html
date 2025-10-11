@@ -5,221 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figure Skating Events</title>
     <link rel="icon" href="media/beautiful_skates.jpeg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8e1e4;
-            border: 10px solid #4a90e2;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Navigation */
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 0;
-        }
-        
-        .top-nav > a {
-            display: block;
-            width: 257px;
-            background-color: #f9d3d7;
-            color: rgb(122, 65, 38);
-            text-align: center;
-            padding: 10px;
-            margin: 0 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-        
-        /* Dropdown container */
-        .top-nav > div {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 257px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-radius: 0 0 5px 5px;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
-        
-        /* Show dropdown on hover */
-        .top-nav > a:hover + div,
-        .top-nav > div:hover {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Dropdown links */
-        .top-nav div a {
-            color: rgb(122, 65, 38);
-            padding: 12px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            background-color: #f9d3d7;
-            margin: 2px 0;
-            transition: background-color 0.3s;
-        }
-        
-        .top-nav div a:hover {
-            background-color: #f8e1e4;
-        }
-        
-        /* Main content */
-        .hero {
-            text-align: center;
-            padding: 30px 0;
-        }
-        
-        .hero h1 {
-            color: #4a90e2;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p.subtitle {
-            color: #333;
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-style: italic;
-        }
-        
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        
-        .content h2 {
-            color: #4a90e2;
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #5b2126;
-            padding-bottom: 10px;
-        }
-        
-        .content p {
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        
-        .content a {
-            color: #4a90e2;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .content a:hover {
-            text-decoration: underline;
-        }
-        
-        .event-list {
-            margin: 30px 0;
-        }
-        
-        .event-item {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #95303a;
-        }
-        
-        .event-item h3 {
-            color: #4a90e2;
-            margin-bottom: 10px;
-        }
-        
-        .event-item p {
-            margin-left: 20px;
-        }
-        
-        .highlight-box {
-            background-color:  #f2e0ff;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 25px 0;
-            border-left: 5px solid #594ae2;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-        
-        .social-icons {
-            margin: 15px 0;
-        }
-        
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 1.5rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .top-nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .top-nav > a {
-                width: 80%;
-                margin: 5px 0;
-            }
-            
-            .top-nav > div {
-                position: static;
-                display: none;
-                width: 80%;
-                box-shadow: none;
-                opacity: 1;
-                transform: none;
-            }
-            
-            .top-nav > a:hover + div,
-            .top-nav > div:hover {
-                display: block;
-                position: static;
-                border-radius: 0 0 5px 5px;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
@@ -227,24 +13,11 @@
         <nav class="top-nav">
             <a href="index.html">Home</a>
             <a href="figure_intro.html">Figure Skating</a>
-                <div class="has-dropdown">
-                    <a href="figure_intro.html">Introduction</a>
-                    <a href="figure_rules.html">Rules</a>
-                    <a href="figure_events.html">Events</a> 
-                </div>
-            <a href="sychro_intro.html">Sychronized Skating</a>
-                <div class="has-dropdown">
-                    <a href="sychro_intro.html">Introduction</a>
-                    <a href="sychro_rules.html">Rules</a>
-                    <a href="sychro_events.html">Events</a>
-                </div>
+            <a href="sychro_events.html">Sychronized Skating</a>
             <a href="history.html">History of Skating</a>
             <a href="beginer.html">Beginner's Guide</a>
-            <a href="#">Organizations of Figure Skating</a>
-                <div class="has-dropdown">
-                    <a href="https://www.isu.org" target="_blank">International Skating Union</a>
-                    <a href="http://www.cfsa.com.cn/cfsa_portal/html/header.html" target="_blank">Chinese Figure Skating Association</a>
-                </div>
+            <a href="https://www.isu.org" target="_blank">International Skating Union</a>
+            <a href="http://www.cfsa.com.cn/cfsa_portal/html/header.html"target="_blank">Chinese Figure Skating Association</a>
         </nav>
         
         <!-- Main content -->
@@ -349,6 +122,10 @@
                         women, 4½ minutes for men) that allows more creative freedom. The combined score determines final 
                         placements.
                     </p>
+                </div>
+
+                <div class="content">
+                    <h2>Click <a href="figure_rules.html">here</a> to view the rules of figure skating</h2>
                 </div>
             </div>
         </div>
