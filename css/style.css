@@ -166,10 +166,13 @@ footer {
     width: 85%;
     display: block;
     margin: auto;
-
 }
 
 .video{
     width: 80%;
     height: 50%;
+}
+.main2 {
+    width: 40%;
+    height: 40%;
 }
